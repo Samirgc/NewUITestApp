@@ -1,6 +1,9 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MyUITest
@@ -16,7 +19,7 @@ namespace MyUITest
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            AppCenter.Start("android=f543a3bb-e79c-4ddd-8129-64035072591c;" + "uwp={Your UWP App secret here};" + "ios={Your iOS App secret here}", typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()
